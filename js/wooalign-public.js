@@ -111,4 +111,7 @@ window.addEventListener("click", function() {
     setTimeout(function() {
         wooAlignButtons();
     }, 5000);
+    setTimeout(function() {
+        wooAlignButtons();
+    }, 7000);
 });
