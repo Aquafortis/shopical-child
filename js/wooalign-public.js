@@ -101,3 +101,14 @@ window.onscroll = function() {
 document.onmousemove = function(event) {
     wooAlignButtons(event);
 };
+window.addEventListener("click", function() {
+    setTimeout(function() {
+        wooAlignButtons();
+    }, 2000);
+    setTimeout(function() {
+        wooAlignButtons();
+    }, 3000);
+    setTimeout(function() {
+        wooAlignButtons();
+    }, 5000);
+});
