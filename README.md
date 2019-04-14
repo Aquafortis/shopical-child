@@ -14,7 +14,7 @@ Activate.
 
 ### Delete the Woo Align Buttons plugin. (If installed.)
 
-** Change pixels as needed to disable the script on small screens **
+##### Change pixels as needed to disable the script on small screens
 
 Look for the two lines in the script as per below:
 
