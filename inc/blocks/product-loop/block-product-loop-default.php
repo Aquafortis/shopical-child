@@ -36,9 +36,9 @@
             <div id="woo-height">
                 <div class="product-title-wrapper">
                     <?php if ($cat_display == 'yes'): ?>
-                        <span class="product-category">
-                            <?php shopical_post_categories(); ?>
-                        </span>
+                    <span class="product-category">
+                        <?php shopical_post_categories(); ?>
+                    </span>
                     <?php endif; ?>
                     <h4 class="product-title">
                         <a href="<?php the_permalink(); ?>">

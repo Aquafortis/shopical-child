@@ -2,7 +2,7 @@
  * Plugin Name:       Woo Align Buttons
  * Plugin URI:        https://wordpress.org/plugins/woo-align-buttons
  * Description:       A lightweight plugin to align WooCommerce "Add to cart" buttons.
- * Version:           5.0.0
+ * Version:           10.5.0
  * Author:            320up
  * Author URI:        https://320up.com
  * License:           GPL-2.0+
@@ -11,11 +11,11 @@
 var wooAlignButtons = function() {
     (function($) {
         "use strict";
-        if ($("ul.products").length) {
-            $("ul.products").each(function() {
+        if ($("ul.products,div.owl-stage").length) {
+            $("ul.products,div.owl-stage").each(function() {
                 var gridRows = [];
                 var tempRow = [];
-                var wooGridElements = $(this).children("li");
+                var wooGridElements = $(this).children("li,div.owl-item");
                 wooGridElements.each(function(index) {
                     if ($(this).css("clear") !== "none" && index !== 0) {
                         gridRows.push(tempRow);
@@ -27,7 +27,7 @@ var wooAlignButtons = function() {
                     }
                 });
                 $(gridRows).each(function() {
-                    //var title = "h2.woocommerce-loop-product__title,li.title";
+                    //var title = "h2.woocommerce-loop-product__title";
                     var title = "div.product-title-wrapper";
                     if ($(title).length) {
                         var tallestTitle = 0;
@@ -46,7 +46,7 @@ var wooAlignButtons = function() {
                             $(this).find(title).css("height", tallestTitle);
                         });
                         // Change pixels as needed (originally 420px)
-                        if (window.matchMedia("(max-width: 220px)").matches) {
+                        if (window.matchMedia("(max-width: 320px)").matches) {
                             $(this).each(function() {
                                 $(this).find(title).css("height", "auto");
                             });
@@ -70,7 +70,7 @@ var wooAlignButtons = function() {
                         $(this).find(wooheight).css("min-height", tallestWoo);
                     });
                     // Change pixels as needed (originally 420px)
-                    if (window.matchMedia("(max-width: 220px)").matches) {
+                    if (window.matchMedia("(max-width: 320px)").matches) {
                         $(this).each(function() {
                             $(this).find(wooheight).css("min-height", "0");
                         });
@@ -96,10 +96,10 @@ window.addEventListener("load", function() {
 });
 // Remove functions below if not required
 window.onscroll = function() {
-    wooAlignButtons();
+    //wooAlignButtons();
 };
 document.onmousemove = function(event) {
-    wooAlignButtons(event);
+    //wooAlignButtons(event);
 };
 window.addEventListener("click", function() {
     setTimeout(function() {
