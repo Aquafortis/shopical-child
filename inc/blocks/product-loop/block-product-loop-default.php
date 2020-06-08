@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="product-description">
-            <div id="woo-height">
+            <div class="woo-height">
                 <div class="product-title-wrapper">
                     <?php if ($cat_display == 'yes'): ?>
                     <span class="product-category">
